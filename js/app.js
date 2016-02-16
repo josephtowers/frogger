@@ -45,7 +45,7 @@ Enemy.prototype.update = function(dt) {
     //console.log('enemy x = ', this.x, 'enemy y = ', this.y);    
     if(this.x > 480){
         var posiciones = [100 , 178 , 250];
-        this.speed = Math.random() * 5;
+        this.speed = 5;
         this.x = -50;
         this.y = posiciones[getRandomInt(0,2)];
 
@@ -134,7 +134,7 @@ var i = 0;
 while(i < 3){
     var enemy = new Enemy();
     enemy.x = i * increaseX;
-    enemy.y = i * increaseY;
+    enemy.y = i * (increaseY / 1.5);
     allEnemies.push(enemy);
     i++
 }

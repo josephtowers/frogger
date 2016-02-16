@@ -1,24 +1,34 @@
 body {
     text-align: center;
+    
 }
 #score
         {
             background-color: teal;
             border: 1px solid inherit;
             width: 250px;
+            height: 70px;
             margin: 0px auto;
             -webkit-border-radius: 15%;
             -webkit-transition: -webkit-box-shadow 1s, -webkit-transform 1s, background-color 1s;
             font-family: Consolas;
             color: white;
             -webkit-box-flex: 1;
+            padding: 4px;
         }
-        
+#container{
+    display: block;
+}
+#options
+{
+    display: none;
+}
         #score:hover
         {
             -webkit-box-shadow: 0px 0px 8px;
-            -webkit-transform: rotate(360deg) scale(2);
+            -webkit-transform: rotate(360deg);
             background-color: firebrick;
+            
             
         }
         #label
@@ -31,15 +41,18 @@ body {
         
         #selection
         {
+            display: none;
             float: right;
             height: 750px;
             clear: both;
-            width: auto;
+            width: 100px;
             margin: 20px;
             border: 1px solid black;
             background-color: teal;
             box-shadow: 0px 0px 8px;
+            color: white;
         }
+        
         #labelcont
         {
             font-family: Consolas;
