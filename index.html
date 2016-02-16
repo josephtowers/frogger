@@ -18,6 +18,7 @@
                 if(getWin()>=10 && a == 0){
                     alert("¡You just unlocked a new character: Raydelto!");
                     $('#hidden').show(1000);
+                    $('#ray').html('Raydelto');
                     a++;
                 }
             },100);
@@ -50,7 +51,9 @@
                         actualSprite = 'images/char-princess-girl.png';
                         break;
                     case 5:
+                        if(getWin() >= 10){
                         actualSprite = 'images/raydelto.png';
+                        }
                         break;
                         
                 }
@@ -89,7 +92,7 @@
         </figure>
         <figure class="image" id="hidden">
             <a href="#"><img onclick="changeSprite(5); $('#selection').hide(1000); $('#charact').show(1000);" src="images/raydelto.png" height="85.5px" width="50.5px"><br /></a>
-            <figcaption>Raydelto</figcaption>
+            <figcaption id ="ray">10 wins to unlock</figcaption>
         </figure>
         
     </div>
