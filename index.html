@@ -12,14 +12,28 @@
     <script type="text/javascript">
         $(document).ready(function(){
             var a = 0;
+            var b = 0;
+            var c = 0;
             window.setInterval(function(){
                 $('#label').html('Wins: ' + getWin() + '  \
                  |    Losses: ' + getLoss());
-                if(getWin()>=10 && a == 0){
-                    alert("¡You just unlocked a new character: Raydelto!");
-                    $('#hidden').show(1000);
-                    $('#ray').html('Raydelto');
+                if(getWin()>=5 && a == 0){
+                    alert("¡You just unlocked a new character: Zuleika!");
+                    
+                    $('#zul').html('Zuleika');
                     a++;
+                }
+                else if(getWin()>=10 && b == 0){
+                    alert("¡You just unlocked a new character: Yesenia!");
+                    
+                    $('#yes').html('Yesenia');
+                    b++;
+                }
+                else if(getWin()>=20 && c == 0){
+                    alert("¡You just unlocked a new character: Raydelto!");
+                    
+                    $('#ray').html('Raydelto');
+                    c++;
                 }
             },100);
             
@@ -45,13 +59,17 @@
                         actualSprite = 'images/char-horn-girl.png';
                         break;
                     case 3:
+                        if(getWin() >= 5){
                         actualSprite = 'images/char-cat-girl.png';
+                        }
                         break;
                     case 4:
+                        if(getWin() >= 10){
                         actualSprite = 'images/char-princess-girl.png';
+                        }
                         break;
                     case 5:
-                        if(getWin() >= 10){
+                        if(getWin() >= 20){
                         actualSprite = 'images/raydelto.png';
                         }
                         break;
@@ -84,15 +102,15 @@
         </figure>
         <figure class="image">
             <a href="#"><img onclick="changeSprite(3); $('#selection').hide(1000); $('#charact').show(1000);" src="images/char-cat-girl.png" height="85.5px" width="50.5px"><br /></a>
-            <figcaption>Zuleika</figcaption>
+            <figcaption id="zul">5 wins to unlock</figcaption>
         </figure>
         <figure class="image">
             <a href="#"><img onclick="changeSprite(4); $('#selection').hide(1000); $('#charact').show(1000);" src="images/char-princess-girl.png" height="85.5px" width="50.5px"><br /></a>
-            <figcaption>Yesenia</figcaption>
+            <figcaption id="yes">10 wins to unlock</figcaption>
         </figure>
         <figure class="image" id="hidden">
             <a href="#"><img onclick="changeSprite(5); $('#selection').hide(1000); $('#charact').show(1000);" src="images/raydelto.png" height="85.5px" width="50.5px"><br /></a>
-            <figcaption id ="ray">10 wins to unlock</figcaption>
+            <figcaption id ="ray">20 wins to unlock</figcaption>
         </figure>
         
     </div>
