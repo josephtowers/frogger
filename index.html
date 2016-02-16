@@ -4,10 +4,76 @@
     <meta charset="UTF-8">
     <title>Effective JavaScript: Frogger</title>
     <link rel="stylesheet" href="css/style.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 </head>
 <body>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            window.setInterval(function(){
+                $('#label').html('Wins: ' + getWin() + '  \
+                 |    Losses: ' + getLoss());
+            },100);
+            $('.image').hover(function()
+             {
+                $(this).children('.maple').toggle(1000);
+            })
+        });
+        var actualSprite = 'images/char-pink-girl.png'
+        function changeSprite(key)
+        {
+            
+            switch(key)
+                {
+                    case 1:
+                        actualSprite = 'images/char-pink-girl.png';
+                        break;
+                    case 2:
+                        actualSprite = 'images/char-horn-girl.png';
+                        break;
+                    case 3:
+                        actualSprite = 'images/char-cat-girl.png';
+                        break;
+                    case 4:
+                        actualSprite = 'images/char-princess-girl.png';
+                        break;
+                        
+                }
+            
+            player = new Player(actualSprite);
+        }
+        
+    </script>
+    <div id = "score">
+        <label id="label">Wins: 0    |    Losses: 0</label>
+        
+        
+    </div>
+    <div id="selection">
+        <div id="labelcont">
+        <label id="titlelabel">Choose another character: <br /></label>
+        </div>
+        <figure class="image">
+            <a href="#"><img onclick="changeSprite(1);" src="images/char-pink-girl.png" height="85.5px" width="50.5px" ><br /></a>
+            <figcaption>Manuela</figcaption>
+        </figure>
+        <figure class="image">
+            <a href="#"><img onclick="changeSprite(2);" src="images/char-horn-girl.png" height="85.5px" width="50.5px"><br /></a>
+            <figcaption>Katiuska</figcaption>
+        </figure>
+        <figure class="image">
+            <a href="#"><img onclick="changeSprite(3);" src="images/char-cat-girl.png" height="85.5px" width="50.5px"><br /></a>
+            <figcaption>Zuleika</figcaption>
+        </figure>
+        <figure class="image">
+            <a href="#"><img onclick="changeSprite(4);" src="images/char-princess-girl.png" height="85.5px" width="50.5px"><br /></a>
+            <figcaption>Yesenia</figcaption>
+        </figure>
+        
+    </div>
     <script src="js/resources.js"></script>
     <script src="js/app.js"></script>
     <script src="js/engine.js"></script>
+    
+    
 </body>
 </html>
