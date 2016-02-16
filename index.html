@@ -11,9 +11,15 @@
 <body>
     <script type="text/javascript">
         $(document).ready(function(){
+            var a = 0;
             window.setInterval(function(){
                 $('#label').html('Wins: ' + getWin() + '  \
                  |    Losses: ' + getLoss());
+                if(getWin()>=10 && a == 0){
+                    alert("¡You just unlocked a new character: Raydelto!");
+                    $('#hidden').show(1000);
+                    a++;
+                }
             },100);
             
             $('#score').hover(function()
@@ -43,6 +49,9 @@
                         break;
                     case 4:
                         actualSprite = 'images/char-princess-girl.png';
+                        break;
+                    case 5:
+                        actualSprite = 'images/raydelto.png';
                         break;
                         
                 }
@@ -78,6 +87,10 @@
         <figure class="image">
             <a href="#"><img onclick="changeSprite(4); $('#selection').hide(1000); $('#charact').show(1000);" src="images/char-princess-girl.png" height="85.5px" width="50.5px"><br /></a>
             <figcaption>Yesenia</figcaption>
+        </figure>
+        <figure class="image" id="hidden">
+            <a href="#"><img onclick="changeSprite(5); $('#selection').hide(1000); $('#charact').show(1000);" src="images/raydelto.png" height="85.5px" width="50.5px"><br /></a>
+            <figcaption>Raydelto</figcaption>
         </figure>
         
     </div>

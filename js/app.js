@@ -78,7 +78,6 @@ var Player = function(sprite1)
 {
     Enemy.call(this);
     this.sprite = sprite1;
-    
     this.x = 200;
     this.y = 420;
 }
