@@ -4,7 +4,7 @@ var win = 0;
 var loss = 0;
 // Enemies our player must avoid
 function getRandomInt(min, max) {
-    return Math.ceil(Math.random() * (max - min + 1)) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
 var Enemy = function() {
@@ -44,7 +44,7 @@ Enemy.prototype.update = function(dt) {
     this.x += (increaseX * dt * this.speed);
     //console.log('enemy x = ', this.x, 'enemy y = ', this.y);    
     if(this.x > 480){
-        var posiciones = [100 , 178 , 250];
+        var posiciones = [70 , 150 , 230];
         this.speed = 5;
         this.x = -50;
         this.y = posiciones[getRandomInt(0,2)];
@@ -133,7 +133,7 @@ var i = 0;
 while(i < 3){
     var enemy = new Enemy();
     enemy.x = i * increaseX;
-    enemy.y = i * (increaseY / 1.5);
+    enemy.y = (i * (increaseY - 21)) + 70;
     allEnemies.push(enemy);
     i++
 }
